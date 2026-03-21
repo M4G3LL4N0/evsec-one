@@ -1,4 +1,6 @@
 import "./globals.css";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 
 export default function RootLayout({
   children,
@@ -7,7 +9,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="min-h-screen flex flex-col">
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
+      </body>
     </html>
   );
 }
