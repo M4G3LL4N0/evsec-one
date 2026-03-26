@@ -24,6 +24,15 @@ export interface PrivacyScore {
   percentile: number;
 }
 
+export interface RecommendedAction {
+  id: string;
+  title: string;
+  description: string;
+  priority: Severity;
+  actionLabel: string;
+  completed?: boolean;
+}
+
 export interface ExposureItem {
   label: string;
   value: number;
