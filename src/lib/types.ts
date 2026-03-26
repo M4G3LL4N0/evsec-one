@@ -1,6 +1,21 @@
 export type Severity = "critical" | "high" | "medium" | "low";
 export type RemovalStatus = "queued" | "processing" | "completed" | "failed" | "verified";
 
+export interface BrokerRemoval {
+  id: string;
+  broker: string;
+  status: RemovalStatus;
+  progress: number;
+  lastUpdated: string;
+}
+
+export interface MonitoringStatus {
+  active: boolean;
+  lastScan: string;
+  nextScan: string;
+  watching: string[];
+}
+
 export interface ExposureItem {
   label: string;
   value: number;
