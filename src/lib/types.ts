@@ -9,6 +9,14 @@ export interface PrivacyScore {
   percentile: number;
 }
 
+export interface PrivacyScore {
+  score: number;
+  status: string;
+  description: string;
+  change: string;
+  percentile: number;
+}
+
 export interface ExposureItem {
   label: string;
   value: number;

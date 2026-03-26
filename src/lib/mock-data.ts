@@ -1,3 +1,5 @@
+import { PrivacyScore } from "./types";
+
 export const privacyScore: PrivacyScore = {
   score: 72,
   status: "Moderate Risk",
