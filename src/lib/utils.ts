@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function severityToTone(severity: Severity): "neutral" | "warning" | "danger" | "success" {
+export function severityToTone(severity: Severity): Tone {
   switch (severity) {
     case "low":
       return "neutral";

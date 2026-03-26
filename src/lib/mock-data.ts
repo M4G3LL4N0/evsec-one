@@ -5,7 +5,12 @@ import {
   RecommendedAction, 
   Alert,
   BrokerRemoval,
-  MonitoringStatus
+  MonitoringStatus,
+  DeviceCheck,
+  IdentityRisk,
+  ProtectionLayer,
+  ActivityItem,
+  Tone
 } from "./types";
 
 export const privacyScore: PrivacyScore = {
@@ -17,12 +22,12 @@ export const privacyScore: PrivacyScore = {
 };
 
 export const exposureSummary: ExposureItem[] = [
-  { label: "Data Brokers", value: 18, tone: "high", description: "Selling your data" },
-  { label: "Breach Records", value: 6, tone: "critical", description: "Password leaks" },
-  { label: "Exposed Emails", value: 3, tone: "high", description: "Spam targets" },
-  { label: "Public Profiles", value: 4, tone: "medium", description: "Privacy risks" },
-  { label: "Leaked IDs", value: 1, tone: "critical", description: "Identity theft" },
-  { label: "Trackers Found", value: 21, tone: "low", description: "Ad targeting" },
+  { label: "Data Brokers", value: 18, tone: "danger", description: "Selling your data" },
+  { label: "Breach Records", value: 6, tone: "danger", description: "Password leaks" },
+  { label: "Exposed Emails", value: 3, tone: "danger", description: "Spam targets" },
+  { label: "Public Profiles", value: 4, tone: "warning", description: "Privacy risks" },
+  { label: "Leaked IDs", value: 1, tone: "danger", description: "Identity theft" },
+  { label: "Trackers Found", value: 21, tone: "neutral", description: "Ad targeting" },
 ];
 
 export const recommendedActions: RecommendedAction[] = [
