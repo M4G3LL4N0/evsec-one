@@ -1,114 +1,86 @@
-import { SectionHeading } from "@/components/shared/section-heading";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+const tiers = [
+  {
+    name: "Starter",
+    price: "Free",
+    description: "Get a first look at your digital exposure and understand where to begin.",
+    features: [
+      "Basic Privacy Score",
+      "Exposure summary",
+      "Limited scan flow",
+      "Starter recommendations",
+    ],
+  },
+  {
+    name: "Plus",
+    price: "$19/mo",
+    description: "Ongoing monitoring and stronger visibility into personal data exposure.",
+    features: [
+      "Full Privacy Score breakdown",
+      "Breach and exposure alerts",
+      "Broker removal queue",
+      "Priority action center",
+    ],
+  },
+  {
+    name: "Family",
+    price: "$49/mo",
+    description: "Protect multiple people with centralized visibility and monitoring.",
+    features: [
+      "Everything in Plus",
+      "Multi-person protection",
+      "Shared household monitoring",
+      "Expanded reporting",
+    ],
+  },
+];
 
 export default function PricingPage() {
   return (
-    <div className="py-24">
-      <SectionHeading
-        title="Simple Pricing"
-        subtitle="Choose the plan that fits your needs. Start protecting your digital life today."
-      />
-      
-      <div className="mt-16 grid md:grid-cols-3 gap-8 container">
-        {/* Starter Plan */}
-        <div className="bg-white/5 p-8 rounded-2xl border border-white/10">
-          <h3 className="text-xl font-semibold">Starter</h3>
-          <p className="mt-4 text-white/60">For individuals getting started with privacy</p>
-          <div className="mt-8">
-            <span className="text-4xl font-bold">$9</span>
-            <span className="text-white/60">/month</span>
+    <main className="min-h-screen bg-black text-white">
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="mb-4 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70">
+            Pricing
           </div>
-          <ul className="mt-8 space-y-4">
-            <li className="flex items-center gap-2 text-white/80">
-              <CheckIcon /> Privacy Score tracking
-            </li>
-            <li className="flex items-center gap-2 text-white/80">
-              <CheckIcon /> Exposure monitoring
-            </li>
-            <li className="flex items-center gap-2 text-white/80">
-              <CheckIcon /> Monthly broker removal
-            </li>
-          </ul>
-          <Button className="w-full mt-8" asChild>
-            <a href="/scan">Get Started</a>
-          </Button>
+          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+            Simple pricing for personal digital protection
+          </h1>
+          <p className="mt-4 text-lg text-white/70">
+            Start free, understand your exposure, and upgrade when you want deeper monitoring
+            and guided protection.
+          </p>
         </div>
 
-        {/* Plus Plan */}
-        <div className="bg-white/5 p-8 rounded-2xl border border-white/10">
-          <h3 className="text-xl font-semibold">Plus</h3>
-          <p className="mt-4 text-white/60">For individuals wanting comprehensive protection</p>
-          <div className="mt-8">
-            <span className="text-4xl font-bold">$19</span>
-            <span className="text-white/60">/month</span>
-          </div>
-          <ul className="mt-8 space-y-4">
-            <li className="flex items-center gap-2 text-white/80">
-              <CheckIcon /> Everything in Starter
-            </li>
-            <li className="flex items-center gap-2 text-white/80">
-              <CheckIcon /> Weekly broker removal
-            </li>
-            <li className="flex items-center gap-2 text-white/80">
-              <CheckIcon /> Breach alerts
-            </li>
-            <li className="flex items-center gap-2 text-white/80">
-              <CheckIcon /> Priority support
-            </li>
-          </ul>
-          <Button className="w-full mt-8" asChild>
-            <a href="/scan">Get Started</a>
-          </Button>
-        </div>
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          {tiers.map((tier) => (
+            <div
+              key={tier.name}
+              className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur"
+            >
+              <div className="text-sm text-white/60">{tier.name}</div>
+              <h2 className="mt-2 text-3xl font-semibold">{tier.price}</h2>
+              <p className="mt-4 text-white/70">{tier.description}</p>
 
-        {/* Family Plan */}
-        <div className="bg-white/5 p-8 rounded-2xl border border-white/10">
-          <h3 className="text-xl font-semibold">Family</h3>
-          <p className="mt-4 text-white/60">For families wanting complete protection</p>
-          <div className="mt-8">
-            <span className="text-4xl font-bold">$29</span>
-            <span className="text-white/60">/month</span>
-          </div>
-          <ul className="mt-8 space-y-4">
-            <li className="flex items-center gap-2 text-white/80">
-              <CheckIcon /> Everything in Plus
-            </li>
-            <li className="flex items-center gap-2 text-white/80">
-              <CheckIcon /> Up to 5 family members
-            </li>
-            <li className="flex items-center gap-2 text-white/80">
-              <CheckIcon /> Child protection features
-            </li>
-            <li className="flex items-center gap-2 text-white/80">
-              <CheckIcon /> Family dashboard
-            </li>
-          </ul>
-          <Button className="w-full mt-8" asChild>
-            <a href="/scan">Get Started</a>
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-}
+              <ul className="mt-8 space-y-3 text-sm text-white/75">
+                {tier.features.map((feature) => (
+                  <li key={feature} className="rounded-xl border border-white/10 bg-black/20 px-4 py-3">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
 
-function CheckIcon() {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="text-green-400"
-    >
-      <path
-        d="M13.3333 4L5.99996 11.3333L2.66663 8"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+              <Link
+                href="/scan"
+                className="mt-8 inline-flex w-full items-center justify-center rounded-2xl bg-white px-5 py-3 font-medium text-black transition hover:opacity-90"
+              >
+                Get Started
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }

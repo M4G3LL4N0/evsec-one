@@ -8,80 +8,55 @@ import { Input } from "@/components/ui/input";
 
 export default function ScanPage() {
   const [loading, setLoading] = useState(false);
-  const [completed, setCompleted] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
+
     setTimeout(() => {
-      setCompleted(true);
       setLoading(false);
+      window.location.href = "/dashboard";
     }, 1200);
   }
 
   return (
     <PageShell
-      title={completed ? "Your privacy scan is complete" : "Check your Privacy Score"}
-      description={
-        completed
-          ? "Create an account to track your progress and get personalized protection."
-          : "Get your free privacy assessment in seconds."
-      }
+      title="Check your Privacy Score"
+      description="Run a simple intake scan to see where your personal data may be exposed and what to fix first."
     >
-      {completed ? (
-        <div className="space-y-4">
-          <div className="p-6 border border-white/10 rounded-xl bg-gradient-to-br from-purple-500/10 to-indigo-500/10">
-            <h3 className="font-medium mb-2">Your privacy score</h3>
-            <div className="flex items-end gap-4">
-              <span className="text-4xl font-bold">72</span>
-              <span className="text-sm pb-1">Moderate Risk</span>
-            </div>
-          </div>
-
-          <p className="text-white/60 text-sm">
-            Your scan found 24 privacy risks across data brokers, breaches,
-            and exposed personal information.
-          </p>
-
-          <div className="space-y-4 pt-4">
-            <Button asChild className="w-full">
-              <Link href="/sign-up">Create Account & Protect Yourself</Link>
-            </Button>
-            <Button variant="outline" asChild className="w-full">
-              <Link href="/dashboard">View Results Without Saving</Link>
-            </Button>
-          </div>
-        </div>
-      ) : (
+      <div className="mx-auto max-w-xl rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
         <form onSubmit={handleSubmit} className="space-y-4">
-          <Input
-            required
-            placeholder="Full Name"
-            className="w-full"
-          />
-          <Input
-            required
-            type="email"
-            placeholder="Email"
-            className="w-full"
-          />
-          <Input
-            placeholder="Phone (optional)"
-            className="w-full"
-          />
+          <Input placeholder="Full name" required />
+          <Input placeholder="Email address" type="email" required />
+          <Input placeholder="Phone number" />
+          <Input placeholder="City / state" />
 
-          <Button className="w-full" loading={loading}>
-            {loading ? "Scanning..." : "Start Scan"}
+          <Button type="submit" className="w-full">
+            {loading ? "Running secure scan..." : "Start Secure Scan"}
           </Button>
-
-          <p className="text-sm text-center text-white/60">
-            Already scanned before?{' '}
-            <Button variant="link" size="sm" className="text-sm" asChild>
-              <Link href="/sign-in">Sign in to see your results</Link>
-            </Button>
-          </p>
         </form>
-      )}
+
+        <div className="mt-6 rounded-2xl border border-white/10 bg-black/20 p-4 text-sm text-white/70">
+          This MVP uses a demo scan flow today. Next we can connect real persistence,
+          exposure checks, and account-based monitoring.
+        </div>
+
+        <div className="space-y-4 pt-4">
+          <Link
+            href="/sign-up"
+            className="inline-flex w-full items-center justify-center rounded-2xl bg-white px-5 py-3 font-medium text-black transition hover:opacity-90"
+          >
+            Create Account & Protect Yourself
+          </Link>
+
+          <Link
+            href="/pricing"
+            className="inline-flex w-full items-center justify-center rounded-2xl border border-white/10 bg-transparent px-5 py-3 font-medium text-white transition hover:bg-white/5"
+          >
+            View Plans
+          </Link>
+        </div>
+      </div>
     </PageShell>
   );
 }

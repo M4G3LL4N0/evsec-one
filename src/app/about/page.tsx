@@ -1,69 +1,69 @@
-import { SectionHeading } from "@/components/shared/section-heading";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="py-24 container">
-      <SectionHeading
-        title="About Opsera"
-        subtitle="We're building a new standard for personal security in the digital age."
-      />
-      
-      <div className="mt-16 max-w-3xl mx-auto space-y-8">
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">Our Mission</h3>
-          <p className="text-white/80">
-            At Opsera, we believe everyone deserves control over their digital footprint. 
-            We're making advanced privacy and security practices accessible to everyone, 
-            not just tech experts.
-          </p>
+    <main className="min-h-screen bg-black text-white">
+      <section className="mx-auto max-w-4xl px-6 py-20">
+        <div className="mb-6 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70">
+          About EvSec-One
         </div>
 
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">The Problem</h3>
-          <p className="text-white/80">
-            Your personal data is being bought, sold, and exposed across countless 
-            broker networks and breach ecosystems. Most people don't even know 
-            where their information is being shared or how to protect it.
-          </p>
-        </div>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+          Privacy and personal security made usable.
+        </h1>
 
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold">Our Principles</h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-2">
-              <h4 className="font-semibold">Clarity</h4>
-              <p className="text-white/80">
-                We explain complex security concepts in simple terms.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <h4 className="font-semibold">Control</h4>
-              <p className="text-white/80">
-                You should decide who has access to your information.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <h4 className="font-semibold">Privacy by Default</h4>
-              <p className="text-white/80">
-                We believe privacy should be the standard, not an option.
-              </p>
-            </div>
-            <div className="space-y-2">
-              <h4 className="font-semibold">Calm Security</h4>
-              <p className="text-white/80">
-                Protection shouldn't mean paranoia. We keep you safe without the stress.
-              </p>
-            </div>
+        <p className="mt-6 max-w-2xl text-lg text-white/70">
+          EvSec-One helps everyday people understand where their data is exposed,
+          what risks matter most, and what to do next. We turn confusing privacy
+          problems into a clear, actionable protection workflow.
+        </p>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <h2 className="text-xl font-medium">Why we exist</h2>
+            <p className="mt-3 text-white/70">
+              Personal data is scattered across brokers, breach datasets, public
+              listings, and tracking systems. Most people have no visibility into
+              how exposed they are or how to improve it.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <h2 className="text-xl font-medium">What EvSec-One does</h2>
+            <p className="mt-3 text-white/70">
+              We give users a Privacy Score, exposure visibility, removal guidance,
+              monitoring, and a calm action plan to improve their digital safety
+              over time.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <h2 className="text-xl font-medium">Our principles</h2>
+            <p className="mt-3 text-white/70">
+              Clarity over jargon. Practical protection over fear. Consumer-grade
+              usability with serious security thinking underneath.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <h2 className="text-xl font-medium">Why now</h2>
+            <p className="mt-3 text-white/70">
+              Data exposure is growing faster than consumer understanding. People
+              need a personal security system that feels modern, simple, and
+              actionable.
+            </p>
           </div>
         </div>
 
         <div className="pt-8">
-          <Button asChild>
-            <a href="/scan">Check Your Privacy Score</a>
-          </Button>
+          <Link
+            href="/scan"
+            className="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 font-medium text-black transition hover:opacity-90"
+          >
+            Check Your Privacy Score
+          </Link>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
