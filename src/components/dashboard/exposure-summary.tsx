@@ -1,6 +1,6 @@
 import { exposureSummary } from "@/lib/mock-data";
 import { StatCard } from "../shared/stat-card";
-import type { Tone } from "@/lib/types";
+import { severityToTone } from "@/lib/utils";
 
 export function ExposureSummary() {
   return (
