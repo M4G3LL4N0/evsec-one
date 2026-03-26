@@ -1,5 +1,6 @@
 import { exposureSummary } from "@/lib/mock-data";
 import { StatCard } from "../shared/stat-card";
+import { severityToTone } from "@/lib/utils";
 
 export function ExposureSummary() {
   return (
@@ -11,7 +12,7 @@ export function ExposureSummary() {
             key={item.label}
             title={item.label}
             value={item.value}
-            tone={item.tone}
+            tone={severityToTone(item.tone)}
             compact
           />
         ))}
