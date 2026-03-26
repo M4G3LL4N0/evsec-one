@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Opsera",
+  name: "EvSec-One",
   tagline: "Your personal security system.",
   description:
     "See where your data is exposed, remove it from the internet, and protect your digital life with one simple dashboard.",
