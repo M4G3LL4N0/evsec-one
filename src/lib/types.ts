@@ -1,6 +1,13 @@
 export type Severity = "critical" | "high" | "medium" | "low";
 export type RemovalStatus = "queued" | "processing" | "completed" | "failed" | "verified";
 
+export interface ExposureItem {
+  label: string;
+  value: number;
+  tone: Severity;
+  description?: string;
+}
+
 export interface PrivacyScore {
   score: number;
   status: string;
