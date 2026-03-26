@@ -1,4 +1,4 @@
-import { PrivacyScore, ExposureItem } from "./types";
+import { PrivacyScore, ExposureItem, Severity } from "./types";
 
 export const privacyScore: PrivacyScore = {
   score: 72,
