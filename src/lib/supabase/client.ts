@@ -1,21 +1,28 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import type { EvSecOneDatabase } from "@/lib/database.types";
 
-type SupabaseClient = ReturnType<typeof createClient> | null;
+let cachedClient: SupabaseClient<EvSecOneDatabase> | null = null;
 
-let supabase: SupabaseClient = null;
+export function getSupabaseBrowserClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-export function getSupabaseClient() {
-  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-    console.warn('Supabase environment variables not configured, auth will not work');
+  if (!supabaseUrl || !supabaseAnonKey) {
     return null;
   }
 
-  if (!supabase) {
-    supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-    );
+  if (cachedClient) {
+    return cachedClient;
   }
 
-  return supabase;
+  cachedClient = createClient<EvSecOneDatabase>(supabaseUrl, supabaseAnonKey, {
+    db: { schema: "evsec_one" },
+    auth: {
+      persistSession: true,
+      autoRefreshToken: true,
+      detectSessionInUrl: true,
+    },
+  });
+
+  return cachedClient;
 }
