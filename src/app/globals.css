@@ -7,10 +7,6 @@ body {
   color: white;
 }
 
-.container {
-  @apply px-4 mx-auto max-w-7xl;
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

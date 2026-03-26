@@ -1,3 +1,5 @@
+"use client";
+
 import { Logo } from "../shared/logo";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
