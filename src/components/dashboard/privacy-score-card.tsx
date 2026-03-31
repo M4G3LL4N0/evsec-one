@@ -17,37 +17,40 @@ export function PrivacyScoreCard() {
   const circumference = 2 * Math.PI * 40;
 
   return (
-    <div className="p-6 border border-white/10 rounded-xl bg-gradient-to-br from-purple-500/10 to-indigo-500/10">
-      <div className="flex items-start justify-between">
+    <div className="p-8 border border-white/10 rounded-2xl bg-gradient-to-br from-purple-500/10 to-indigo-500/10 backdrop-blur">
+      <div className="flex items-start justify-between mb-4">
         <div>
-          <h3 className="text-sm font-medium">Your Privacy Score</h3>
-          <div className="mt-1 flex items-center space-x-2">
-            <span className={cn("text-4xl font-bold tracking-tight", getScoreColor(privacyScore.score))}>
-              {privacyScore.score}
-            </span>
+          <div className="flex items-center gap-2 mb-1">
+            <h3 className="text-lg font-semibold">Privacy Score</h3>
             <span className="text-xs px-2 py-1 rounded-full bg-white/5">
               {privacyScore.status}
             </span>
           </div>
-          <p className="mt-2 text-sm text-white/60">{privacyScore.description}</p>
-          <div className="mt-4 flex space-x-3">
-            <button className="text-xs px-3 py-1.5 rounded-md bg-white/5 hover:bg-white/10 transition-colors">
-              Improve score
-            </button>
-            <button className="text-xs px-3 py-1.5 rounded-md bg-indigo-500/80 hover:bg-indigo-500 transition-colors">
-              Review exposures
-            </button>
+          <p className="text-sm text-white/70">{privacyScore.description}</p>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-between">
+        <div>
+          <div className="flex items-end gap-2">
+            <span className={cn("text-5xl font-bold tracking-tight", getScoreColor(privacyScore.score))}>
+              {privacyScore.score}
+            </span>
+            <div className="pb-1 flex flex-col items-center">
+              <span className="text-xs text-green-400">{privacyScore.change}</span>
+              <span className="text-xs text-white/60">{privacyScore.percentile}% percentile</span>
+            </div>
           </div>
         </div>
-        
+
         <div className="relative">
-          <svg className="w-24 h-24">
+          <svg className="w-20 h-20">
             <circle
-              className="text-white/5"
+              className="text-white/10"
               strokeWidth="6"
               stroke="currentColor"
               fill="transparent"
-              r="40"
+              r="32"
               cx="50%"
               cy="50%"
             />
@@ -59,31 +62,64 @@ export function PrivacyScoreCard() {
               strokeLinecap="round"
               stroke="currentColor"
               fill="transparent"
-              r="40"
+              r="32"
               cx="50%"
               cy="50%"
-              transform="rotate(-90 45 45)"
+              transform="rotate(-90 40 40)"
+              style={{
+                transition: 'stroke-dashoffset 1s ease-out'
+              }}
             />
           </svg>
-          <div className="absolute inset-0 flex items-center justify-center flex-col">
-            <span className="text-xs text-white/60">{privacyScore.percentile}% percentile</span>
-            <span className="text-[10px] text-green-400">{privacyScore.change}</span>
-          </div>
         </div>
       </div>
-      <div className="mt-4 pt-4 border-t border-white/5 grid grid-cols-3 gap-4 text-xs">
-        <div>
-          <div className="text-white/60">Broker Removal</div>
-          <div className="font-medium">25%</div>
-        </div>
-        <div>
-          <div className="text-white/60">Breach Impact</div>
-          <div className="font-medium">Medium</div>
-        </div>
-        <div>
-          <div className="text-white/60">Tracking Blocked</div>
-          <div className="font-medium">86%</div>
-        </div>
+
+      <div className="mt-6 grid grid-cols-3 gap-4">
+        <StatCard 
+          title="Broker Removal" 
+          value="25%" 
+          description="In progress"
+          tone={privacyScore.score < 50 ? "danger" : "warning"}
+          compact
+        />
+        <StatCard 
+          title="Breach Impact" 
+          value="Medium" 
+          description="Moderate risk"
+          tone="warning"
+          compact
+        />
+        <StatCard 
+          title="Tracking Blocked" 
+          value="86%" 
+          description="Good coverage"
+          tone="success"
+          compact
+        />
+      </div>
+
+      <div className="mt-8 flex justify-between gap-3">
+        <Button 
+          variant="outline" 
+          className="w-full text-sm bg-white/5 hover:bg-white/10"
+        >
+          <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
+            <path d="M13 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V11" stroke="currentColor" strokeWidth="2" />
+            <path d="M18 2v4a2 2 0 01-2 2h-4a2 2 0 01-2-2V2" stroke="currentColor" strokeWidth="2" />
+            <path d="M7 11v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M11 11v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M15 11v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+          View Report
+        </Button>
+        <Button 
+          className="w-full text-sm bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600"
+        >
+          <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none">
+            <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          Scan Again
+        </Button>
       </div>
     </div>
   );
