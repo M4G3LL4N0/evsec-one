@@ -16,9 +16,14 @@ export function DashboardSidebar() {
   const pathname = usePathname();
   
   return (
-    <div className="hidden md:flex md:w-64 md:flex-col border-r border-white/10">
+    <div className="hidden md:flex md:w-64 md:flex-col border-r border-white/10 backdrop-blur bg-black/50">
       <div className="p-6">
-        <Logo />
+        <div className="flex items-center gap-2">
+          <Logo />
+          <span className="text-xs bg-gradient-to-r from-purple-500 to-indigo-500 px-2 py-1 rounded-full">
+            PREMIUM
+          </span>
+        </div>
       </div>
       <nav className="flex-1 px-3 py-4 space-y-1">
         {navItems.map((item) => (
@@ -26,36 +31,55 @@ export function DashboardSidebar() {
             key={item.name}
             href={item.href}
             className={cn(
-              "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
+              "group flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-colors",
               pathname === item.href
-                ? "bg-white/5 text-white"
+                ? "bg-gradient-to-r from-purple-500/20 to-indigo-500/20 text-white border border-white/10 shadow-md shadow-purple-500/10"
                 : "text-white/60 hover:bg-white/5 hover:text-white"
             )}
           >
-            <svg
-              className={cn(
-                "mr-3 h-5 w-5",
-                pathname === item.href ? "text-white" : "text-white/60 group-hover:text-white"
-              )}
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
-            </svg>
-            {item.name}
+            <div className={cn(
+              "p-1.5 rounded-lg mr-3 flex items-center justify-center",
+              pathname === item.href 
+                ? "bg-gradient-to-r from-purple-500 to-indigo-500"
+                : "bg-white/5"
+            )}>
+              <svg
+                className={cn(
+                  "h-4 w-4",
+                  pathname === item.href ? "text-white" : "text-white/60 group-hover:text-white"
+                )}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
+              </svg>
+            </div>
+            <span>{item.name}</span>
           </Link>
         ))}
       </nav>
       <div className="p-4 border-t border-white/10">
-        <div className="text-xs text-white/40 mb-2">Security status</div>
+        <div className="flex items-center justify-between mb-2">
+          <div className="text-xs text-white/40">Security status</div>
+          <button className="text-xs px-2 py-1 rounded bg-white/5 hover:bg-white/10 transition-colors">
+            Details
+          </button>
+        </div>
         <div className="flex items-center text-xs">
           <span className="relative flex h-2 w-2 mr-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
           </span>
-          Protection active
+          <span className="font-medium">Active Protection</span>
+          <span className="ml-auto text-green-400">100%</span>
+        </div>
+        <div className="mt-2 h-1.5 w-full rounded-full bg-white/5 overflow-hidden">
+          <div 
+            className="h-full rounded-full bg-gradient-to-r from-green-400 to-green-500"
+            style={{ width: '100%' }}
+          />
         </div>
       </div>
     </div>
