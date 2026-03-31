@@ -27,7 +27,7 @@ export function StatCard({
   };
 
   return (
-    <div className={cn("p-4 border border-white/10 rounded-xl", className)}>
+    <div className={cn("p-4 border border-white/10 rounded-xl hover:border-white/20 transition-colors bg-gradient-to-b from-black/50 to-black/20 backdrop-blur", className)}>
       <div className={cn("flex items-center justify-between", compact ? "gap-2" : "mb-2")}>
         <h3 className={cn("text-sm", compact ? "truncate" : "")}>{title}</h3>
         {change && (
