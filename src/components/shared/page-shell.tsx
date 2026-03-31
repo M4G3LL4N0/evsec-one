@@ -12,7 +12,7 @@ export function PageShell({
   description?: string;
 }) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-black/95 to-black/80 text-white">
+    <div className="min-h-screen bg-gradient-to-b from-black via-black/95 to-black/80 text-white font-sans">
       <div className="container px-6 pb-12">
         <header className="py-8">
           <Link href="/">

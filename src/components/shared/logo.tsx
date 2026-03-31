@@ -1,6 +1,6 @@
 export function Logo() {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 hover:opacity-90 transition-opacity">
       <svg
         width="32"
         height="32"
