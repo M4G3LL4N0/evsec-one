@@ -1,14 +1,16 @@
 export const siteConfig = {
   name: "EvSec-One",
-  tagline: "Your personal security system.",
+  domain: "evsec.one",
+  noaerthSubdomain: "evsec-one.noaerth.com",
+  tagline: "Security for everyone.",
   description:
-    "See where your data is exposed, remove it from the internet, and protect your digital life with one simple dashboard.",
-  cta: "Check Your Privacy Score",
+    "EvSec-One gives normal people a premium, understandable way to monitor exposure, remove public data, and improve their digital security posture over time.",
+  ctaPrimary: "Check Your Exposure",
+  ctaSecondary: "See Platform",
   nav: [
-    { href: "/", label: "Home" },
-    { href: "/scan", label: "Scan" },
-    { href: "/dashboard", label: "Dashboard" },
-    { href: "/pricing", label: "Pricing" },
-    { href: "/about", label: "About" },
+    { href: "#platform", label: "Platform" },
+    { href: "#layers", label: "Layers" },
+    { href: "#how-it-works", label: "How it Works" },
+    { href: "#why-evsec", label: "Why EvSec-One" },
   ],
 };
