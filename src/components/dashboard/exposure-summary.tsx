@@ -4,8 +4,8 @@ import { severityToTone } from "@/lib/utils";
 
 export function ExposureSummary() {
   return (
-    <div className="p-4 border border-white/10 rounded-xl">
-      <h3 className="text-sm font-medium mb-4">Exposure Summary</h3>
+    <div className="p-6 border border-white/10 rounded-2xl bg-gradient-to-b from-black/50 to-black/20 backdrop-blur">
+      <h3 className="text-lg font-semibold mb-4">Exposure Summary</h3>
       <div className="grid grid-cols-2 gap-4">
         {exposureSummary.map((item) => (
           <StatCard

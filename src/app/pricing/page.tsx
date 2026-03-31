@@ -57,7 +57,11 @@ export default function PricingPage() {
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur"
+              className={`rounded-3xl border ${
+                tier.name === 'Plus' 
+                  ? 'border-indigo-500/30 bg-gradient-to-b from-indigo-500/10 to-black/20 shadow-lg shadow-indigo-500/10'
+                  : 'border-white/10 bg-gradient-to-b from-black/40 to-black/20'
+              } p-8 backdrop-blur transition-all hover:border-white/20`}
             >
               <div className="text-sm text-white/60">{tier.name}</div>
               <h2 className="mt-2 text-3xl font-semibold">{tier.price}</h2>

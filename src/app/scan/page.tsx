@@ -24,7 +24,7 @@ export default function ScanPage() {
       title="Check your Privacy Score"
       description="Run a simple intake scan to see where your personal data may be exposed and what to fix first."
     >
-      <div className="mx-auto max-w-xl rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+      <div className="mx-auto max-w-xl rounded-3xl border border-white/10 bg-gradient-to-b from-black/40 to-black/20 p-8 backdrop-blur">
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input placeholder="Full name" required />
           <Input placeholder="Email address" type="email" required />
