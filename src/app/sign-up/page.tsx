@@ -9,29 +9,32 @@ export default function SignUpPage() {
       title="Start protecting your privacy"
       description="Create your account to begin securing your digital identity."
     >
-      <form className="space-y-4 mt-6">
-        <div className="grid gap-2">
-          <Input
-            type="text"
-            placeholder="Full name"
-            className="w-full"
-          />
-          <Input
-            type="email"
-            placeholder="Email"
-            className="w-full"
-            required
-          />
-          <Input
-            type="password"
-            placeholder="Password (min 8 characters)"
-            className="w-full"
-            minLength={8}
-            required
-          />
-        </div>
+      <div className="mx-auto max-w-xl rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+        <form className="space-y-4">
+          <div className="grid gap-2">
+            <Input
+              type="text"
+              placeholder="Full name"
+              className="w-full"
+            />
+            <Input
+              type="email"
+              placeholder="Email"
+              className="w-full"
+              required
+            />
+            <Input
+              type="password"
+              placeholder="Password (min 8 characters)"
+              className="w-full"
+              minLength={8}
+              required
+            />
+          </div>
 
-        <Button className="w-full">Create Account</Button>
+          <Button className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600">
+            Create Account
+          </Button>
 
         <p className="text-sm text-white/60 text-center">
           By signing up, you agree to our{' '}

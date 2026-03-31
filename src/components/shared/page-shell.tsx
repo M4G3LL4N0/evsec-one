@@ -12,19 +12,21 @@ export function PageShell({
   description?: string;
 }) {
   return (
-    <div className="min-h-screen bg-black text-white px-6 pb-12">
-      <div className="container">
+    <div className="min-h-screen bg-gradient-to-b from-black via-black/95 to-black/80 text-white">
+      <div className="container px-6 pb-12">
         <header className="py-8">
           <Link href="/">
             <Logo />
           </Link>
         </header>
 
-        <div className="max-w-md mx-auto">
+        <div className="max-w-xl mx-auto">
           <div className="mb-8 text-center">
-            <h1 className="text-2xl font-bold mb-2">{title}</h1>
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent mb-3">
+              {title}
+            </h1>
             {description && (
-              <p className="text-white/60 mx-auto max-w-sm">{description}</p>
+              <p className="text-white/70 mx-auto text-lg">{description}</p>
             )}
           </div>
 
@@ -32,7 +34,7 @@ export function PageShell({
 
           <p className="mt-8 text-center text-sm text-white/60">
             Need help?{' '}
-            <Button variant="link" className="text-sm" asChild>
+            <Button variant="link" className="text-sm hover:text-indigo-400" asChild>
               <Link href="/about">Contact Support</Link>
             </Button>
           </p>

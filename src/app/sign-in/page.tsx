@@ -9,21 +9,24 @@ export default function SignInPage() {
       title="Welcome back"
       description="Secure access to your privacy dashboard."
     >
-      <form className="space-y-4 mt-6">
-        <Input
-          type="email"
-          placeholder="Email"
-          className="w-full"
-          required
-        />
-        <Input
-          type="password"
-          placeholder="Password"
-          className="w-full"
-          required
-        />
+      <div className="mx-auto max-w-xl rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+        <form className="space-y-4">
+          <Input
+            type="email"
+            placeholder="Email"
+            className="w-full"
+            required
+          />
+          <Input
+            type="password"
+            placeholder="Password"
+            className="w-full"
+            required
+          />
 
-        <Button className="w-full">Sign In</Button>
+          <Button className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600">
+            Sign In
+          </Button>
 
         <div className="flex justify-between items-center mt-4">
           <Button variant="link" size="sm" className="text-sm" asChild>
