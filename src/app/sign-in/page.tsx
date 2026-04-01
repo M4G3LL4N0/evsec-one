@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function SignInPage() {
   return (
     <PageShell
-      title="Welcome back"
+      title="Welcome back to EvSec-One"
       description="Secure access to your privacy dashboard."
     >
       <div className="mx-auto max-w-xl rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
