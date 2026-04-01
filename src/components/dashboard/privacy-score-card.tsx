@@ -17,34 +17,46 @@ export function PrivacyScoreCard() {
   const circumference = 2 * Math.PI * 40;
 
   return (
-    <div className="p-8 border border-white/10 rounded-2xl bg-gradient-to-br from-purple-500/10 to-indigo-500/10 backdrop-blur">
-      <div className="flex items-start justify-between mb-4">
-        <div>
-          <div className="flex items-center gap-2 mb-1">
-            <h3 className="text-lg font-semibold">Privacy Score</h3>
-            <span className="text-xs px-2 py-1 rounded-full bg-white/5">
-              {privacyScore.status}
-            </span>
+    <div className="p-6 border border-white/10 rounded-2xl bg-gradient-to-b from-black/50 to-black/20 backdrop-blur relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/10 to-indigo-500/10 opacity-20"></div>
+      <div className="relative z-10">
+        <div className="flex items-start justify-between mb-6">
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <h3 className="text-lg font-semibold">Privacy Score</h3>
+              <span className="text-xs px-2 py-1 rounded-full bg-white/5 border border-white/10">
+                {privacyScore.status}
+              </span>
+            </div>
+            <p className="text-sm text-white/70 max-w-[240px]">{privacyScore.description}</p>
           </div>
-          <p className="text-sm text-white/70">{privacyScore.description}</p>
+          <button className="text-xs p-1.5 rounded-lg border border-white/10 hover:bg-white/5 transition-colors">
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none">
+              <path d="M12 16v-4m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
         </div>
-      </div>
 
-      <div className="flex items-center justify-between">
-        <div>
-          <div className="flex items-end gap-2">
-            <span className={cn("text-5xl font-bold tracking-tight", getScoreColor(privacyScore.score))}>
-              {privacyScore.score}
-            </span>
-            <div className="pb-1 flex flex-col items-center">
-              <span className="text-xs text-green-400">{privacyScore.change}</span>
-              <span className="text-xs text-white/60">{privacyScore.percentile}% percentile</span>
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="flex items-end gap-3">
+              <span className={cn("text-5xl font-bold tracking-tight", getScoreColor(privacyScore.score))}>
+                {privacyScore.score}
+              </span>
+              <div className="pb-1 flex flex-col items-start gap-0.5">
+                <span className="text-xs font-medium text-green-400 flex items-center gap-1">
+                  <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  {privacyScore.change}
+                </span>
+                <span className="text-xs text-white/60">Top {privacyScore.percentile}%</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="relative">
-          <svg className="w-20 h-20">
+          <div className="relative">
+            <svg className="w-24 h-24">
             <circle
               className="text-white/10"
               strokeWidth="6"

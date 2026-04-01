@@ -12,25 +12,30 @@ export function ExposureSummary() {
         </button>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {exposureSummary.map((item) => (
-          <div key={item.label} className="flex flex-col">
-            <StatCard
-              title={item.label}
-              value={item.value}
-              description={item.description}
-              tone={severityToTone(item.tone)}
-              compact
-            />
-            <div className="mt-1">
-              <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                <div 
-                  className={`h-full ${getToneBg(item.tone)} rounded-full`}
-                  style={{ width: `${Math.min(item.value * 10, 100)}%` }}
-                />
+        {exposureSummary.map((item) => {
+          const maxValue = Math.max(...exposureSummary.map(i => i.value));
+          const widthPercentage = Math.min((item.value / maxValue) * 100, 100);
+          
+          return (
+            <div key={item.label} className="group">
+              <div className="p-3 border border-white/10 rounded-xl hover:border-white/20 transition-colors bg-gradient-to-b from-black/30 to-black/10">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-sm font-medium">{item.label}</h4>
+                  <span className={`text-xs px-1.5 py-0.5 rounded ${getToneBg(item.tone)}/10 ${getToneText(item.tone)}`}>
+                    {item.value}
+                  </span>
+                </div>
+                <p className="text-xs text-white/60 mb-3">{item.description}</p>
+                <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                  <div 
+                    className={`h-full rounded-full ${getToneBg(item.tone)}`}
+                    style={{ width: `${widthPercentage}%` }}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
