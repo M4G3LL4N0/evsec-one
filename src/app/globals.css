@@ -91,10 +91,6 @@ button {
   backdrop-filter: blur(14px);
 }
 
-.hairline {
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
 .text-muted {
   color: var(--muted);
 }
