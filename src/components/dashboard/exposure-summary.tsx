@@ -47,5 +47,4 @@ function getToneBg(tone: string) {
     case 'warning': return 'bg-yellow-400';
     default: return 'bg-white/40';
   }
-  );
 }

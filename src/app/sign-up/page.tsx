@@ -73,6 +73,7 @@ export default function SignUpPage() {
           </Button>
         </p>
       </form>
+    </div>
     </PageShell>
   );
 }

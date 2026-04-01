@@ -64,6 +64,7 @@ export default function SignInPage() {
           </Link>
         </Button>
       </div>
+      </form>
     </PageShell>
   );
 }
