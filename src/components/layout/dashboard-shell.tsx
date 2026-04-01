@@ -10,7 +10,7 @@ export function DashboardShell({
   className?: string;
 }) {
   return (
-    <div className="flex min-h-screen bg-gradient-to-b from-black via-black/95 to-black/80">
+    <div className="flex min-h-screen bg-gradient-to-b from-black via-black/95 to-black/80 backdrop-blur-lg">
       <DashboardSidebar />
       <div className="flex-1">
         <DashboardTopbar />

@@ -17,8 +17,11 @@ export function PrivacyScoreCard() {
   const circumference = 2 * Math.PI * 40;
 
   return (
-    <div className="p-6 border border-white/10 rounded-2xl bg-gradient-to-b from-black/50 to-black/20 backdrop-blur relative overflow-hidden">
+    <div className="p-6 border border-white/10 rounded-2xl bg-gradient-to-b from-black/50 to-black/20 backdrop-blur-lg relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/10 to-indigo-500/10 opacity-20"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 opacity-10"></div>
+      <div className="absolute -right-20 -top-20 w-40 h-40 rounded-full bg-purple-500/10 blur-3xl"></div>
+      <div className="absolute -left-20 -bottom-20 w-40 h-40 rounded-full bg-indigo-500/10 blur-3xl"></div>
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-6">
           <div>

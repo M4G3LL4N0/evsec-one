@@ -59,8 +59,8 @@ export default function PricingPage() {
               key={tier.name}
               className={`rounded-3xl border ${
                 tier.name === 'Plus' 
-                  ? 'border-indigo-500/30 bg-gradient-to-b from-indigo-500/10 to-black/20 shadow-lg shadow-indigo-500/10'
-                  : 'border-white/10 bg-gradient-to-b from-black/40 to-black/20'
+                  ? 'border-indigo-500/30 bg-gradient-to-b from-indigo-500/10 to-black/20 shadow-lg shadow-indigo-500/10 hover:shadow-indigo-500/20'
+                  : 'border-white/10 bg-gradient-to-b from-black/40 to-black/20 hover:bg-black/30'
               } p-8 backdrop-blur transition-all hover:border-white/20`}
             >
               <div className="text-sm text-white/60">{tier.name}</div>

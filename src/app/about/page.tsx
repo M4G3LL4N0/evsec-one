@@ -18,7 +18,8 @@ export default function AboutPage() {
           problems into a clear, actionable protection workflow.
         </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 backdrop-blur-lg">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 opacity-10 pointer-events-none" />
           <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-black/40 to-black/20 p-6 backdrop-blur hover:border-white/20 transition-colors">
             <h2 className="text-xl font-medium">Why we exist</h2>
             <p className="mt-3 text-white/70">

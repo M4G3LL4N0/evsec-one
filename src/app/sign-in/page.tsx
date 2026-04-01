@@ -9,7 +9,10 @@ export default function SignInPage() {
       title="Secure Access"
       description="Welcome back to your EvSec-One protection dashboard"
     >
-      <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-gradient-to-b from-black/40 to-black/20 p-8 backdrop-blur">
+      <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-gradient-to-b from-black/40 to-black/20 p-8 backdrop-blur-lg relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 opacity-10"></div>
+        <div className="absolute -right-20 -top-20 w-40 h-40 rounded-full bg-purple-500/10 blur-3xl"></div>
+        <div className="absolute -left-20 -bottom-20 w-40 h-40 rounded-full bg-indigo-500/10 blur-3xl"></div>
         <form className="space-y-4">
           <Input
             type="email"

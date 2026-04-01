@@ -1,6 +1,7 @@
 export function DashboardTopbar() {
   return (
-    <div className="border-b border-white/10 px-6 py-4 backdrop-blur bg-black/50">
+    <div className="border-b border-white/10 px-6 py-4 backdrop-blur-lg bg-black/50">
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 opacity-20 pointer-events-none" />
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-lg font-medium">Dashboard</h1>
