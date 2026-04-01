@@ -24,8 +24,15 @@ export default function SignInPage() {
             required
           />
 
-          <Button className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600">
-            Sign In
+          <Button 
+            className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 group"
+          >
+            <span className="relative">
+              Secure Sign In
+              <span className="absolute -right-5 group-hover:translate-x-1 transition-transform">
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </span>
           </Button>
 
         <div className="flex justify-between items-center mt-4">

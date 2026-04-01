@@ -2,9 +2,9 @@ export const siteConfig = {
   name: "EvSec-One",
   domain: "evsec.one",
   noaerthSubdomain: "evsec-one.noaerth.com",
-  tagline: "Security for everyone.",
+  tagline: "Premium Digital Protection",
   description:
-    "EvSec-One gives normal people a premium, understandable way to monitor exposure, remove public data, and improve their digital security posture over time.",
+    "EvSec-One provides world-class privacy protection with enterprise-grade safeguards - simplified for personal use. Monitor exposures, automatically remove public data, and continuously improve your digital security.",
   ctaPrimary: "Check Your Exposure",
   ctaSecondary: "See Platform",
   nav: [

@@ -60,7 +60,7 @@ export default function ScanPage() {
               <div className="w-full mt-8 space-y-2">
                 <div className="flex items-center justify-between text-xs">
                   <span>Data brokers</span>
-                  <span className="text-purple-400">Checking...</span>
+                  <Loader2 className="w-3 h-3 text-purple-400 animate-spin" />
                 </div>
                 <div className="flex items-center justify-between text-xs">
                   <span>Breach archives</span>
