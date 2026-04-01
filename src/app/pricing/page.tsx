@@ -61,7 +61,11 @@ export default function PricingPage() {
                 tier.name === 'Plus' 
                   ? 'border-indigo-500/30 bg-gradient-to-b from-indigo-500/10 to-black/20 shadow-lg shadow-indigo-500/10 hover:shadow-indigo-500/20'
                   : 'border-white/10 bg-gradient-to-b from-black/40 to-black/20 hover:bg-black/30'
-              } p-8 backdrop-blur transition-all hover:border-white/20`}
+              } p-8 backdrop-blur transition-all hover:border-white/20 relative overflow-hidden group`}
+            >
+              {tier.name === 'Plus' && (
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500/5 via-transparent to-transparent opacity-30" />
+              )}
             >
               <div className="text-sm text-white/60">{tier.name}</div>
               <h2 className="mt-2 text-3xl font-semibold">{tier.price}</h2>
