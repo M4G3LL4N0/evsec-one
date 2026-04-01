@@ -6,10 +6,10 @@ import Link from "next/link";
 export default function SignUpPage() {
   return (
     <PageShell
-      title="Start protecting your privacy with EvSec-One"
-      description="Create your account to begin securing your digital identity."
+      title="Begin Protection"
+      description="Create your EvSec-One account to start securing your digital identity"
     >
-      <div className="mx-auto max-w-xl rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+      <div className="mx-auto max-w-xl rounded-2xl border border-white/10 bg-gradient-to-b from-black/40 to-black/20 p-8 backdrop-blur">
         <form className="space-y-4">
           <div className="grid gap-2">
             <Input
