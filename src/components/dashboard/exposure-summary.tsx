@@ -11,7 +11,8 @@ export function ExposureSummary() {
           View details
         </button>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,16,31,0.4)_0%,rgba(7,16,31,0)_100%)] pointer-events-none" />
         {exposureSummary.map((item) => {
           const maxValue = Math.max(...exposureSummary.map(i => i.value));
           const widthPercentage = Math.min((item.value / maxValue) * 100, 100);

@@ -14,7 +14,8 @@ export function PageShell({
   className?: string;
 }) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-black/95 to-black/80 text-white font-sans backdrop-blur-lg">
+    <div className="min-h-screen bg-gradient-to-b from-[#07101f] via-[#07101f]/95 to-[#07101f]/80 text-white font-sans backdrop-blur-lg">
+      <div className="absolute inset-0 bg-[url('/public/window.svg')] bg-[size:100px_100px] opacity-[0.02]" />
       <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 opacity-10 pointer-events-none" />
       <div className="container px-6 pb-12">
         <header className="py-8">
