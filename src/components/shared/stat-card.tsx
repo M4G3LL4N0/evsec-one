@@ -53,8 +53,8 @@ export function StatCard({
         <div className="flex items-center gap-2">
           <h3 className={cn("text-sm", compact ? "truncate" : "")}>{title}</h3>
           {tooltip && (
-            <Tooltip>
-              <TooltipTrigger>
+            <Tooltip delayDuration={200}>
+              <TooltipTrigger asChild>
                 <Info className="h-3.5 w-3.5 text-white/40 hover:text-white/60 transition-colors" />
               </TooltipTrigger>
               <TooltipContent className="max-w-[200px] text-sm">
