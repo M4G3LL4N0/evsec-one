@@ -1,10 +1,10 @@
-import { PrivacyScore } from "@/lib/types";
+import type { PrivacyScore } from "@/lib/types";
 import { privacyScore } from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { StatCard } from "@/components/shared/stat-card";
 
-export function PrivacyScoreCard(): JSX.Element {
+export function PrivacyScoreCard() {
   const getScoreColor = (score: number): string => {
     if (score < 50) return "text-red-400";
     if (score < 80) return "text-yellow-400";
