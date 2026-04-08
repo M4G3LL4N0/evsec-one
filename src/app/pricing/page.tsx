@@ -66,7 +66,6 @@ export default function PricingPage() {
               {tier.name === 'Plus' && (
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500/5 via-transparent to-transparent opacity-30" />
               )}
-            >
               <div className="text-sm text-white/60">{tier.name}</div>
               <h2 className="mt-2 text-3xl font-semibold">{tier.price}</h2>
               <p className="mt-4 text-white/70">{tier.description}</p>

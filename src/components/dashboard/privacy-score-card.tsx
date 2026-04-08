@@ -1,5 +1,7 @@
 import { privacyScore } from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { StatCard } from "@/components/shared/stat-card";
 
 export function PrivacyScoreCard() {
   const getScoreColor = (score: number) => {
