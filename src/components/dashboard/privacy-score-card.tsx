@@ -1,16 +1,17 @@
+import { PrivacyScore } from "@/lib/types";
 import { privacyScore } from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { StatCard } from "@/components/shared/stat-card";
 
-export function PrivacyScoreCard() {
-  const getScoreColor = (score: number) => {
+export function PrivacyScoreCard(): JSX.Element {
+  const getScoreColor = (score: number): string => {
     if (score < 50) return "text-red-400";
     if (score < 80) return "text-yellow-400";
     return "text-green-400";
   };
 
-  const getRingColor = (score: number) => {
+  const getRingColor = (score: number): string => {
     if (score < 50) return "stroke-red-400";
     if (score < 80) return "stroke-yellow-400";
     return "stroke-green-400";
