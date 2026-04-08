@@ -91,6 +91,7 @@ export function PrivacyScoreCard() {
               }}
             />
           </svg>
+          </div>
         </div>
       </div>
 
