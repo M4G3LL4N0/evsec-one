@@ -5,6 +5,8 @@ import Link from "next/link";
 import { PageShell } from "@/components/shared/page-shell";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ShieldCheckIcon, UserIcon, EnvelopeIcon, PhoneIcon, MapPinIcon, LockClosedIcon, ClockIcon, EyeSlashIcon, BadgeCheckIcon } from "@heroicons/react/24/outline";
+import { Loader2 } from "lucide-react";
 
 export default function ScanPage() {
   const [loading, setLoading] = useState(false);
