@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HomeHeader } from "@/components/marketing/home-header";
 import { siteConfig } from "@/lib/site";
 
 const layers = [
@@ -60,36 +61,7 @@ export default function HomePage() {
       <div className="hero-orb right-[-80px] top-[120px] h-[260px] w-[260px] bg-blue-500/20" />
       <div className="hero-orb left-[28%] top-[320px] h-[260px] w-[260px] bg-violet-500/14" />
 
-      <header className="sticky top-0 z-40 border-b border-white/8 bg-[#07101fcc]/90 backdrop-blur-xl">
-        <div className="shell flex items-center justify-between gap-6 px-5 py-4">
-          <Link href="/" className="text-lg font-semibold tracking-tight text-white">
-            EvSec-One
-          </Link>
-
-          <nav className="hidden items-center gap-8 text-sm text-white/68 md:flex">
-            {siteConfig.nav.map((item) => (
-              <a key={item.label} href={item.href} className="transition hover:text-white">
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <Link
-              href="/scan"
-              className="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm font-medium text-white/92 transition hover:bg-white/10"
-            >
-              Scan
-            </Link>
-            <a
-              href={`https://${siteConfig.noaerthSubdomain}`}
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#78b8ff] via-[#74f0cf] to-[#9d7cff] px-4 py-2 text-sm font-semibold text-slate-950 shadow-[0_10px_30px_rgba(116,240,207,0.22)] transition hover:scale-[1.01]"
-            >
-              Open {siteConfig.domain}
-            </a>
-          </div>
-        </div>
-      </header>
+      <HomeHeader />
 
       <section className="grid-glow relative pt-16 md:pt-24">
         <div className="shell px-5">
