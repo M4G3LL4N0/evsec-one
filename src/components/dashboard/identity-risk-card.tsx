@@ -1,4 +1,14 @@
 export function IdentityRiskCard() {
+  const identityRisk = {
+    description:
+      "Public identity exposure is elevated because multiple signals are present across search, broker, and account surfaces.",
+    factors: [
+      "Personal identifiers found in broker-style listings",
+      "Recovery information should be reviewed for reuse",
+      "Public-profile details may make impersonation easier",
+    ],
+  };
+
   return (
     <div className="p-6 border border-white/10 rounded-2xl bg-gradient-to-b from-black/50 to-black/20 backdrop-blur">
       <div className="flex items-center justify-between mb-4">

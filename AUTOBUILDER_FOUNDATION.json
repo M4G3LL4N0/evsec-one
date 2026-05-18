@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "project_folder": "evsec-one",
+  "startup_name": "EvSec-One",
+  "domain": "evsec.one",
+  "category": "consumer-security",
+  "stage": "mvp",
+  "one_line_description": "Premium personal exposure and privacy protection platform.",
+  "technical_stack": {
+    "framework": "Next.js",
+    "language": "TypeScript",
+    "styling": "Tailwind CSS",
+    "package_manager": "pnpm",
+    "deployment": "Vercel"
+  }
+}

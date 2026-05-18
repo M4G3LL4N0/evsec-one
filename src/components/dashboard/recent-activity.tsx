@@ -1,4 +1,21 @@
+import Link from "next/link";
+
+type ActivityType = "scan" | "user" | "report";
+
 export function RecentActivity() {
+  const recentActivity: Array<{
+    id: string;
+    type: ActivityType;
+    text: string;
+    timestamp: string;
+  }> = [
+    { id: "act_1", type: "scan", text: "Identity exposure scan completed", timestamp: "12m ago" },
+    { id: "act_2", type: "report", text: "Broker-removal queue updated", timestamp: "41m ago" },
+    { id: "act_3", type: "user", text: "Recovery contact review recommended", timestamp: "Today" },
+    { id: "act_4", type: "scan", text: "Device posture check refreshed", timestamp: "Yesterday" },
+    { id: "act_5", type: "report", text: "Public profile risk summary generated", timestamp: "Yesterday" },
+  ];
+
   const getActivityIcon = (type: ActivityType) => {
     switch(type) {
       case 'scan':

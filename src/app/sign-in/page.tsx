@@ -1,4 +1,5 @@
 import { PageShell } from "@/components/shared/page-shell";
+import { SubpageVisual } from "@/components/SubpageVisual";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
@@ -6,7 +7,9 @@ import { ArrowRight } from "lucide-react";
 
 export default function SignInPage() {
   return (
-    <PageShell
+    <>
+    <SubpageVisual variant="default" />
+      <PageShell
       title="Secure Access"
       description="Welcome back to your EvSec-One protection dashboard"
     >
@@ -71,5 +74,6 @@ export default function SignInPage() {
         </div>
       </div>
     </PageShell>
-  );
+  </>
+  )
 }

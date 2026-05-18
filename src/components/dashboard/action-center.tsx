@@ -1,4 +1,28 @@
 export function ActionCenter() {
+  const recommendedActions = [
+    {
+      id: "remove-exposed-profiles",
+      title: "Remove exposed profiles",
+      description: "Start with data broker entries that expose contact details.",
+      priority: "critical" as const,
+      actionLabel: "Start",
+    },
+    {
+      id: "enable-monitoring",
+      title: "Enable monitoring",
+      description: "Watch for new exposure across public indexes.",
+      priority: "high" as const,
+      actionLabel: "Enable",
+    },
+    {
+      id: "review-passwords",
+      title: "Review reused credentials",
+      description: "Reduce account takeover risk before outreach.",
+      priority: "medium" as const,
+      actionLabel: "Review",
+    },
+  ];
+
   return (
     <div className="p-6 border border-white/10 rounded-2xl bg-gradient-to-b from-black/50 to-black/20 backdrop-blur relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,16,31,0.4)_0%,rgba(7,16,31,0)_100%)] pointer-events-none" />

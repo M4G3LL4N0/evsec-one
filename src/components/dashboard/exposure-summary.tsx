@@ -49,3 +49,11 @@ function getToneBg(tone: string) {
     default: return 'bg-white/40';
   }
 }
+
+function getToneText(tone: string) {
+  switch(tone) {
+    case 'danger': return 'text-red-200';
+    case 'warning': return 'text-yellow-200';
+    default: return 'text-white/70';
+  }
+}

@@ -1,6 +1,8 @@
 import { Logo } from "./logo";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { Lock, Shield } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function PageShell({
   children,

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "tasks": [
+    {
+      "id": "task-001",
+      "priority": "high",
+      "title": "Finish green build stabilization"
+    },
+    {
+      "id": "task-002",
+      "priority": "high",
+      "title": "Wire Supabase auth"
+    },
+    {
+      "id": "task-003",
+      "priority": "medium",
+      "title": "Implement real score engine"
+    }
+  ]
+}

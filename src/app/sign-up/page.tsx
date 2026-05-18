@@ -1,11 +1,15 @@
 import { PageShell } from "@/components/shared/page-shell";
+import { SubpageVisual } from "@/components/SubpageVisual";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import { CheckCircle2, Fingerprint, Shield } from "lucide-react";
 
 export default function SignUpPage() {
   return (
-    <PageShell
+    <>
+    <SubpageVisual variant="default" />
+      <PageShell
       title="Begin Protection"
       description="Create your EvSec-One account to start securing your digital identity"
     >
@@ -75,5 +79,6 @@ export default function SignUpPage() {
       </form>
     </div>
     </PageShell>
-  );
+  </>
+  )
 }

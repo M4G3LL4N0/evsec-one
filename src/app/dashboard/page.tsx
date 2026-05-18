@@ -1,4 +1,5 @@
 import { DashboardShell } from "@/components/layout/dashboard-shell";
+import { SubpageVisual } from "@/components/SubpageVisual";
 import { PrivacyScoreCard } from "@/components/dashboard/privacy-score-card";
 import { ExposureSummary } from "@/components/dashboard/exposure-summary";
 import { ActionCenter } from "@/components/dashboard/action-center";
@@ -13,7 +14,9 @@ import { ScanSummaryCard } from "@/components/dashboard/scan-summary-card";
 
 export default function DashboardPage() {
   return (
-    <DashboardShell>
+    <>
+    <SubpageVisual variant="dashboard" />
+      <DashboardShell>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -34,5 +37,6 @@ export default function DashboardPage() {
         </div>
       </div>
     </DashboardShell>
-  );
+  </>
+  )
 }

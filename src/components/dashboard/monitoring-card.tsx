@@ -1,4 +1,10 @@
 export function MonitoringCard() {
+  const monitoringStatus = {
+    lastScan: "Today, 9:12 AM",
+    nextScan: "Tomorrow morning",
+    watching: ["Identity brokers", "Account exposure", "Public profile changes", "Credential signals"],
+  };
+
   return (
     <div className="p-6 border border-white/10 rounded-2xl bg-gradient-to-b from-black/50 to-black/20 backdrop-blur">
       <div className="flex items-center justify-between mb-4">

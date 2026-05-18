@@ -1,4 +1,32 @@
 export function ProtectionLayersCard() {
+  const protectionLayers = [
+    {
+      name: "Broker takedown queue",
+      status: "active" as const,
+      description: "Removal workflows are active for indexed identity records.",
+    },
+    {
+      name: "Account recovery review",
+      status: "pending" as const,
+      description: "Review backup contacts and reused recovery paths.",
+    },
+    {
+      name: "Dark-web credential watch",
+      status: "active" as const,
+      description: "Monitoring for email and password exposure signals.",
+    },
+    {
+      name: "Device posture",
+      status: "active" as const,
+      description: "Core device checks are enabled.",
+    },
+    {
+      name: "Family identity shield",
+      status: "inactive" as const,
+      description: "Optional household monitoring has not been configured.",
+    },
+  ];
+
   return (
     <div className="p-6 border border-white/10 rounded-2xl bg-gradient-to-b from-black/50 to-black/20 backdrop-blur">
       <div className="flex items-center justify-between mb-4">

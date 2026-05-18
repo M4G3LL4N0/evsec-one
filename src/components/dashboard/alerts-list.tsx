@@ -1,4 +1,10 @@
 export function AlertsList() {
+  const alerts = [
+    { id: "broker", title: "Data broker exposure", description: "Personal address appears in public broker indexes.", severity: "critical" as const, source: "Broker scan", time: "Now" },
+    { id: "email", title: "Email reuse detected", description: "Primary email appears across multiple public services.", severity: "high" as const, source: "Identity graph", time: "Today" },
+    { id: "profile", title: "Profile metadata drift", description: "Old social profiles expose stale employment data.", severity: "medium" as const, source: "Profile audit", time: "Yesterday" },
+  ];
+
   return (
     <div className="p-6 border border-white/10 rounded-2xl bg-gradient-to-b from-black/50 to-black/20 backdrop-blur">
       <div className="flex items-center justify-between mb-4">

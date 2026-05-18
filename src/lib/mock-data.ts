@@ -1,136 +1,168 @@
-import { 
-  PrivacyScore, 
-  ExposureItem, 
-  Severity, 
-  RecommendedAction, 
+import type {
+  PrivacyScore,
+  ExposureItem,
+  RecommendedAction,
   Alert,
   BrokerRemoval,
-  MonitoringStatus,
   DeviceCheck,
+  MonitoringStatus,
   IdentityRisk,
   ProtectionLayer,
   ActivityItem,
-  Tone
 } from "./types";
 
 export const privacyScore: PrivacyScore = {
   score: 72,
   status: "Moderate Risk",
-  description: "Better than 58% of users",
+  description: "Better than 58% of scanned users",
   change: "+8 this month",
   percentile: 58,
 };
 
 export const exposureSummary: ExposureItem[] = [
-  { label: "Data Brokers", value: 18, tone: "danger", description: "Selling your data" },
-  { label: "Breach Records", value: 6, tone: "danger", description: "Password leaks" },
-  { label: "Exposed Emails", value: 3, tone: "danger", description: "Spam targets" },
-  { label: "Public Profiles", value: 4, tone: "warning", description: "Privacy risks" },
-  { label: "Leaked IDs", value: 1, tone: "danger", description: "Identity theft" },
-  { label: "Trackers Found", value: 21, tone: "neutral", description: "Ad targeting" },
+  {
+    label: "Data Brokers",
+    value: 18,
+    tone: "high",
+    description: "Broker databases currently exposing identity-linked data.",
+  },
+  {
+    label: "Breach Records",
+    value: 6,
+    tone: "critical",
+    description: "Known breach-linked credential exposure.",
+  },
+  {
+    label: "Public Profiles",
+    value: 11,
+    tone: "medium",
+    description: "Searchable public identity surfaces.",
+  },
+  {
+    label: "Tracking Signals",
+    value: 23,
+    tone: "low",
+    description: "Advertising and behavioral tracking vectors.",
+  },
 ];
 
 export const recommendedActions: RecommendedAction[] = [
   {
     id: "1",
-    title: "Remove records from 12 data brokers",
-    description: "Start opt-out and suppression requests to reduce spam and scams.",
-    priority: "high",
-    actionLabel: "Begin Removal",
+    title: "Remove broker listings",
+    description: "Begin automated removal requests for exposed listings.",
+    priority: "critical",
+    status: "Recommended",
+    cta: "Start Removal",
   },
   {
     id: "2",
-    title: "Rotate 3 compromised passwords",
-    description: "These credentials were found in recent breach archives.",
-    priority: "critical",
-    actionLabel: "Change Passwords",
-  },
-  {
-    id: "3",
-    title: "Enable masked email forwarding",
-    description: "Hide your real email when signing up for services.",
-    priority: "medium",
-    actionLabel: "Enable Protection",
-  },
-  {
-    id: "4",
-    title: "Lock down social profiles",
-    description: "2 public profiles are exposing personal metadata.",
-    priority: "medium",
-    actionLabel: "Adjust Settings",
+    title: "Enable stronger MFA",
+    description: "Upgrade account authentication posture.",
+    priority: "high",
+    status: "Important",
+    cta: "Review Accounts",
   },
 ];
 
 export const alerts: Alert[] = [
   {
     id: "1",
-    title: "Credential pair found in leak dataset",
-    source: "Breach scan: 03/18/2026",
-    time: "2 hours ago",
+    title: "Credential pair discovered in breach dataset",
     severity: "critical",
+    description: "An email/password combination was found in a known breach.",
   },
   {
     id: "2",
-    title: "Phone number indexed by broker network",
-    source: "PeopleFinder lookup",
-    time: "Today",
+    title: "New broker exposure detected",
     severity: "high",
-  },
-  {
-    id: "3",
-    title: "Address-linked profile rediscovered",
-    source: "Public records sweep",
-    time: "Yesterday",
-    severity: "medium",
-  },
-  {
-    id: "4",
-    title: "New tracking cookie detected",
-    source: "Browser scan",
-    time: "45 minutes ago",
-    severity: "low",
+    description: "A broker indexed a new address-linked record.",
   },
 ];
 
 export const brokerQueue: BrokerRemoval[] = [
-  { id: "1", broker: "PeopleFind Hub", status: "processing", progress: 75, lastUpdated: "10 min ago" },
-  { id: "2", broker: "Address Atlas", status: "queued", progress: 0, lastUpdated: "Today" },
-  { id: "3", broker: "ContactTrace", status: "completed", progress: 100, lastUpdated: "Yesterday" },
-  { id: "4", broker: "ProfileIndex", status: "processing", progress: 30, lastUpdated: "1 hour ago" },
+  {
+    id: "1",
+    broker: "PeopleFind Hub",
+    status: "processing",
+    progress: 75,
+    lastUpdated: "Today",
+  },
+  {
+    id: "2",
+    broker: "Address Atlas",
+    status: "queued",
+    progress: 0,
+    lastUpdated: "Today",
+  },
+];
+
+export const deviceChecks: DeviceCheck[] = [
+  {
+    name: "Password Manager",
+    status: "enabled",
+    recommendation: "Good coverage",
+  },
+  {
+    name: "2FA Coverage",
+    status: "partial",
+    recommendation: "Enable on all important accounts",
+  },
+  {
+    name: "Tracking Protection",
+    status: "disabled",
+    recommendation: "Browser protection recommended",
+  },
 ];
 
 export const monitoringStatus: MonitoringStatus = {
-  active: true,
-  lastScan: "Today at 2:22 PM",
-  nextScan: "Tomorrow at 2:00 AM",
-  watching: ["Breaches", "Brokers", "Dark Web", "Public Records"],
+  lastScan: "2 hours ago",
+  nextScan: "In 12 hours",
 };
-
-export const deviceChecks: DeviceCheck[] = [
-  { name: "Password Manager", status: "enabled", recommendation: "Good" },
-  { name: "2FA Enabled", status: "partial", recommendation: "Enable everywhere" },
-  { name: "Tracking Prevention", status: "disabled", recommendation: "Activate" },
-];
 
 export const identityRisk: IdentityRisk = {
   level: "high",
-  description: "Several high-risk exposures could enable identity theft",
+  description:
+    "Identity exposure is elevated due to broker indexing, breached credentials, and persistent public discoverability.",
   factors: [
-    "Government ID exposure",
-    "Multiple breached passwords",
-    "Public address listings"
+    "Broker databases contain address-linked records",
+    "Credentials found in historical breaches",
+    "Search engines expose identity-linked references",
   ],
 };
 
 export const protectionLayers: ProtectionLayer[] = [
-  { name: "Continuous Monitoring", status: "active", description: "24/7 exposure detection" },
-  { name: "Automatic Removals", status: "active", description: "For high-risk brokers" },
-  { name: "Privacy Hardening", status: "pending", description: "Guided setup recommended" },
+  {
+    name: "Broker Removal Layer",
+    status: "active",
+    description: "Removes exposed records from known broker ecosystems.",
+  },
+  {
+    name: "Credential Monitoring",
+    status: "active",
+    description: "Tracks breach-linked credential exposure.",
+  },
+  {
+    name: "Device Hardening",
+    status: "partial",
+    description: "Security posture guidance for personal devices.",
+  },
 ];
 
 export const recentActivity: ActivityItem[] = [
-  { id: "1", text: "Privacy score improved by 8 points", timestamp: "Today", type: "system" },
-  { id: "2", text: "2 broker removals completed", timestamp: "Yesterday", type: "scan" },
-  { id: "3", text: "New critical alert detected", timestamp: "2 hours ago", type: "scan" },
-  { id: "4", text: "Enabled email masking", timestamp: "3 days ago", type: "user" },
+  {
+    id: "1",
+    type: "scan",
+    description: "Exposure scan completed successfully.",
+  },
+  {
+    id: "2",
+    type: "alert",
+    description: "New breach-linked credential alert detected.",
+  },
+  {
+    id: "3",
+    type: "removal",
+    description: "Broker removal request submitted.",
+  },
 ];

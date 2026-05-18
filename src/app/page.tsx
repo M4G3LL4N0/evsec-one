@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { MarketingGraphicsStack } from "@/components/MarketingGraphicsStack";
+import { HeroProductPanel } from "@/components/HeroProductPanel";
+import { TrustStrip } from "@/components/TrustStrip";
 import { HomeHeader } from "@/components/marketing/home-header";
 import { siteConfig } from "@/lib/site";
 
@@ -57,6 +60,10 @@ const capabilities = [
 export default function HomePage() {
   return (
     <main className="min-h-screen overflow-x-hidden">
+        <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
+          <TrustStrip />
+        </div>
+
       <div className="hero-orb left-[-140px] top-[70px] h-[280px] w-[280px] bg-cyan-400/20" />
       <div className="hero-orb right-[-80px] top-[120px] h-[260px] w-[260px] bg-blue-500/20" />
       <div className="hero-orb left-[28%] top-[320px] h-[260px] w-[260px] bg-violet-500/14" />
@@ -363,6 +370,8 @@ export default function HomePage() {
           </footer>
         </div>
       </section>
+      <section className="mx-auto max-w-6xl px-4 pb-16 pt-8 sm:px-6"><HeroProductPanel /></section>
+    <MarketingGraphicsStack />
     </main>
   );
 }

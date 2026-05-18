@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { SubpageVisual } from "@/components/SubpageVisual";
 import Link from "next/link";
 import { PageShell } from "@/components/shared/page-shell";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ShieldCheckIcon, UserIcon, EnvelopeIcon, PhoneIcon, MapPinIcon, LockClosedIcon, ClockIcon, EyeSlashIcon, CheckBadgeIcon, InformationCircleIcon } from "@heroicons/react/24/outline";
+import { ShieldCheckIcon, UserIcon, EnvelopeIcon, PhoneIcon, MapPinIcon, LockClosedIcon, ClockIcon, EyeSlashIcon, CheckBadgeIcon, InformationCircleIcon, UserPlusIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
 import { Loader2 } from "lucide-react";
 
 export default function ScanPage() {
@@ -22,7 +23,9 @@ export default function ScanPage() {
   }
 
   return (
-    <PageShell
+    <>
+    <SubpageVisual variant="default" />
+      <PageShell
       title="Check your Privacy Score"
       description="Run a simple intake scan to see where your personal data may be exposed and what to fix first."
     >
@@ -169,5 +172,6 @@ export default function ScanPage() {
         )}
       </div>
     </PageShell>
-  );
+  </>
+  )
 }

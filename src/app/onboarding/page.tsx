@@ -1,8 +1,9 @@
 "use client";
 
 import { PageShell } from "@/components/shared/page-shell";
+import { SubpageVisual } from "@/components/SubpageVisual";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Shield, Lock, BadgeCheck } from "lucide-react";
+import { CheckCircle2, Shield, Lock, BadgeCheck, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const steps = [
@@ -25,7 +26,9 @@ const steps = [
 
 export default function OnboardingPage() {
   return (
-    <PageShell
+    <>
+    <SubpageVisual variant="default" />
+      <PageShell
       title="Welcome to EvSec-One"
       description="Your personal security platform is being configured"
       className="max-w-2xl"
@@ -77,5 +80,6 @@ export default function OnboardingPage() {
         </div>
       </div>
     </PageShell>
-  );
+  </>
+  )
 }

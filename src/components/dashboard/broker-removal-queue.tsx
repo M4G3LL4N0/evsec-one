@@ -1,4 +1,11 @@
 export function BrokerRemovalQueue() {
+  const brokerQueue = [
+    { id: "people-search", broker: "People search network", status: "processing" as const, eta: "48h", progress: 64, lastUpdated: "12m ago", exposedFields: ["address", "phone"] },
+    { id: "marketing-db", broker: "Marketing database", status: "queued" as const, eta: "3 days", progress: 0, lastUpdated: "Queued", exposedFields: ["email", "employment"] },
+    { id: "archive", broker: "Archived listing", status: "completed" as const, eta: "done", progress: 100, lastUpdated: "Today", exposedFields: ["old address"] },
+    { id: "stale-index", broker: "Stale index", status: "failed" as const, eta: "manual review", progress: 28, lastUpdated: "Needs review", exposedFields: ["partial profile"] },
+  ];
+
   return (
     <div className="p-6 border border-white/10 rounded-2xl bg-gradient-to-b from-black/50 to-black/20 backdrop-blur">
       <div className="flex items-center justify-between mb-4">

@@ -1,4 +1,22 @@
 export function DeviceProtectionCard() {
+  const deviceChecks = [
+    {
+      name: "Passcode and screen lock",
+      status: "enabled" as const,
+      recommendation: "Strong lock posture detected.",
+    },
+    {
+      name: "Account recovery review",
+      status: "partial" as const,
+      recommendation: "Review recovery contacts and backup emails.",
+    },
+    {
+      name: "Data broker monitoring",
+      status: "disabled" as const,
+      recommendation: "Enable monitoring before public-profile scans.",
+    },
+  ];
+
   return (
     <div className="p-6 border border-white/10 rounded-2xl bg-gradient-to-b from-black/50 to-black/20 backdrop-blur">
       <div className="flex items-center justify-between mb-4">
